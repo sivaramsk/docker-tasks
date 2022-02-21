@@ -1,0 +1,9 @@
+version: '3'
+services:
+  app:
+    image: nginx
+    volumes:
+      - /usr/bin/docker:/usr/bin/docker
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/lib/x86_64-linux-gnu/libltdl.so.7:/usr/lib/x86_64-linux-gnu/libltdl.so.7
+    command: docker run --name=privileged-container --privileged=true -p 8080:80 nginx

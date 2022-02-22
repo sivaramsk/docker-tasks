@@ -89,7 +89,7 @@ popd >/dev/null
 
 # If a pidfile is still around (for example after a container restart),
 # delete it so that docker can start.
-# rm -rf /var/run/docker.pid
+rm -rf /var/run/docker.pid
 
 }
 

@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Run a docker container
+      community.docker.docker_container_exec:
+        container: keen_meitner
+        command: /usr/local/bin/docker run -d -t ubuntu
+      register: result
+    
+    - name: Print stdout
+      debug:
+        var: result.stdout
